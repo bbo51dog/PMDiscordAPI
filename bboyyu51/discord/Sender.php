@@ -2,6 +2,8 @@
 
 namespace bboyyu51\discord;
 
+use pocketmine\Server;
+
 class Sender{
     
     /** @var string */
@@ -22,7 +24,7 @@ class Sender{
      *
      * @param string $message
      */
-    public function send(string $message): void{
+    public function Send(string $message): void{
         $options = [
             'http' => [
                 'method' => 'POST',
@@ -34,5 +36,14 @@ class Sender{
             ],
         ];
         $response = file_get_contents($this->webhook_url, false, stream_context_create($options));
+    }
+    
+    /**
+     * Send Message by AsyncTask
+     *
+     * @param string $message
+     */
+    public function AsyncSend(string $message){
+        Server::getInstance()->getAsyncPool()->submitTask(new AsyncSendTask($message));
     }
 }
