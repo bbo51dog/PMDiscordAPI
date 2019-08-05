@@ -1,0 +1,4 @@
+name: SamplePlugin
+api: [3.0.0]
+main: sample\Main
+author: bboyyu51
