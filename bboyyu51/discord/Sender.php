@@ -44,6 +44,6 @@ class Sender{
      * @param string $message
      */
     public function AsyncSend(string $message){
-        Server::getInstance()->getAsyncPool()->submitTask(new AsyncSendTask($message));
+        Server::getInstance()->getAsyncPool()->submitTask(new AsyncSendTask($message, $this));
     }
 }
