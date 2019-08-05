@@ -7,7 +7,7 @@ use bboyyu51\discord\Sender;
 
 class Main extends PluginBase{
     public function onEnable(){
-        $this->sender = new Sender("https://discordapp.com/api/webhooks/xxxxxxx");
+        $this->sender = new Sender("https://discordapp.com/api/webhooks/xxxxx/xxxxx");
         $this->sender->AsyncSend("Server Opened");
     }
     
