@@ -7,9 +7,9 @@
  *| |_) | |_) | (_) | |_| | |_| | |_| |___) | |
  *|_.__/|_.__/ \___/ \__, |\__, |\__,_|____/|_|
  *                   |___/ |___/
- * Send Message to Discord Library
+ * Send Message to Discord API
  * 
- * @see https://github.com/bboyyu51/DiscordWebhook
+ * @see https://github.com/bboyyu51/PM-DiscordAPI
  * @author bboyyu51 <bbo51@icloud.com>
  * @copyright 2019 bboyyu51
  */
