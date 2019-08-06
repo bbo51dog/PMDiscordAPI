@@ -1,0 +1,6 @@
+name: PM-DiscordAPI
+api: [3.0.0]
+main: bboyyu51\pm-discord\Main
+author: bboyyu51
+description: Send Message to Discord API
+version: 1.1.0
