@@ -16,7 +16,7 @@
  * @copyright 2019 bboyyu51
  */
 
-namespace bboyyu51\pm-discord;
+namespace bboyyu51\pmdiscord;
 
 use pocketmine\Server;
 

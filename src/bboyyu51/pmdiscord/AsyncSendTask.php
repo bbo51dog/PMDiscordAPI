@@ -15,10 +15,17 @@
  * @copyright 2019 bboyyu51
  */
 
-namespace bboyyu51\pm-discord;
+namespace bboyyu51\pmdiscord;
 
-use pocketmine\plugin\PluginBase;
+use pocketmine\scheduler\AsyncTask;
 
-class Main extends PluginBase{
-
+class AsyncSendTask extends AsyncTask{
+    public function __construct(string $message, Sender $sender){
+        $this->message = $message;
+        $this->sender = $sender;
+    }
+    
+    public function onRun(){
+        $this->sender->Send($this->message);
+    }
 }
