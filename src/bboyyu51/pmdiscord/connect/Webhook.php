@@ -31,7 +31,10 @@ class Webhook{
     /** @var ContentBase[] */
     private $content;
 
-    public function __construct(){
-
+    public function __construct(string $webhook_url){
+        $file = file_get_contents($webhook_url);
+        $json = json_decode($webhook_url, true);
+        $this->sender_name = $json["name"];
+        $this->webhook_url = $webhook_url;
     }
 }
