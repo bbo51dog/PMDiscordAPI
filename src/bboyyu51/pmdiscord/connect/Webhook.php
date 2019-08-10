@@ -22,19 +22,20 @@ use bboyyu51\pmdiscord\content\ContentBase;
 
 class Webhook{
 
-    /** @var string */
-    private $sender_name;
-
-    /** @var string */
-    private $webhook_url;
-
-    /** @var ContentBase[] */
-    private $content;
+    /** @var array */
+    private $data;
 
     public function __construct(string $webhook_url){
         $file = file_get_contents($webhook_url);
         $json = json_decode($webhook_url, true);
-        $this->sender_name = $json["name"];
-        $this->webhook_url = $webhook_url;
+        $this->data["username"] = $json["name"];
+        $this->data["webhook_url"] = $webhook_url;
+    }
+
+    /**
+     * @param ContentBase $content
+     */
+    public function addContent(ContentBase $content): void{
+
     }
 }
