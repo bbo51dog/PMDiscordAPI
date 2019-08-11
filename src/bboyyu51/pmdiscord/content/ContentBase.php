@@ -22,4 +22,6 @@ abstract class ContentBase{
     
     /** @var string */
     protected const CONTENT_TYPE = "base";
+
+    abstract public function get(): array;
 }
