@@ -16,7 +16,7 @@
  * @copyright 2019 bboyyu51
  */
 
-namespace pmdiscord\content;
+namespace bboyyu51\pmdiscord\content;
 
 abstract class ContentBase{
     
