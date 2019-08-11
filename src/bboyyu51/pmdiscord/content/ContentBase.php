@@ -20,4 +20,6 @@ namespace pmdiscord\content;
 
 abstract class ContentBase{
     
+    /** @var string */
+    protected const CONTENT_TYPE = "";
 }
