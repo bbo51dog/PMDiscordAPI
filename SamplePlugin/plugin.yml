@@ -2,4 +2,4 @@ name: SamplePlugin
 api: [3.0.0]
 main: sample\Main
 author: bboyyu51
-version: SAMPLE-1.1.0
+version: SAMPLE-2.0.0
