@@ -16,10 +16,15 @@
  * @copyright 2019 bboyyu51
  */
 
-namespace bboyyu51\pmdiscord\content;
+namespace bboyyu51\pmdiscord\structure;
 
-class Text extends ContentBase{
-
+abstract class Structure{
+    
     /** @var string */
-    protected const CONTENT_TYPE = "text";
+    protected const TYPE = "base";
+    
+    /** @var array */
+    protected $content;
+
+    abstract public function get(): array;
 }

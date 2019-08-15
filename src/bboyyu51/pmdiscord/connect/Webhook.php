@@ -18,7 +18,7 @@
 
 namespace bboyyu51\pmdiscord\connect;
 
-use bboyyu51\pmdiscord\content\ContentBase;
+use bboyyu51\pmdiscord\structure\Structure;
 
 class Webhook{
 
@@ -35,7 +35,7 @@ class Webhook{
     /**
      * @param ContentBase $content
      */
-    public function addContent(ContentBase $content): void{
+    public function addContent(Structure $structure): void{
 
     }
 }
