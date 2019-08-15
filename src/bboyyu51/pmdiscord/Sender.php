@@ -19,6 +19,7 @@
 namespace bboyyu51\pmdiscord;
 
 use pocketmine\Server;
+use bboyyu51\pmdiscord\connect\Webhook;
 
 class Sender{
     
@@ -61,5 +62,15 @@ class Sender{
      */
     public function AsyncSend(string $message){
         Server::getInstance()->getAsyncPool()->submitTask(new AsyncSendTask($message, $this));
+    }
+    
+    /**
+     * Create Webhook instance
+     * 
+     * @param string $webhook_url
+     * @return Webhook
+     */
+    public static function create(string $webhook_url): Webhook{
+        return new Webhook($webhook_url);
     }
 }
