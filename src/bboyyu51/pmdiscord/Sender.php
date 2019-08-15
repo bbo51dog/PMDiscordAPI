@@ -28,7 +28,7 @@ class Sender{
      *
      * @param Webhook $webhook
      */
-    public static function Send(Webhook $webhook): void{
+    public static function send(Webhook $webhook): void{
         $options = [
             'http' => [
                 'method' => 'POST',
@@ -44,7 +44,7 @@ class Sender{
      *
      * @param Webhook $webhook
      */
-    public static function AsyncSend(Webhook $webhook): void{
+    public static function sendAsync(Webhook $webhook): void{
         Server::getInstance()->getAsyncPool()->submitTask(new AsyncSendTask($webhook));
     }
     
