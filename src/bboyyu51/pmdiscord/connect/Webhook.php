@@ -36,9 +36,10 @@ class Webhook{
     }
 
     /**
+     * Add structure
      * @param Structure $structure
      */
-    public function addStructure(Structure $structure): void{
+    public function add(Structure $structure): void{
         $this->data[$structure->type()] = $structure->get();
     }
 
