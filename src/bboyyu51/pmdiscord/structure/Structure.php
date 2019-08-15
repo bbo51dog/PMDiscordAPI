@@ -23,8 +23,13 @@ abstract class Structure{
     /** @var string */
     protected const TYPE = "base";
     
-    /** @var array */
+    /** @var mixed */
     protected $content;
 
-    abstract public function get(): array;
+    /** @return mixed */
+    abstract public function get();
+    
+    public function type(): string{
+        return self::TYPE;
+    }
 }

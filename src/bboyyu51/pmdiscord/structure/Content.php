@@ -23,10 +23,7 @@ class Content extends Structure{
     /** @var string */
     protected const TYPE = "content";
     
-    public function get(): array{
-        return [
-            "type" => self::TYPE,
-            "content" => $this->content,
-        ];
+    public function get(){
+        return $this->content;
     }
 }
