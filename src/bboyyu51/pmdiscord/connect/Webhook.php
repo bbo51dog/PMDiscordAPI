@@ -46,6 +46,13 @@ class Webhook{
      * @return array
      */
     public function getData(): array{
-        rerurn $this->data;
+        return $this->data;
+    }
+    
+    /**
+     * @retutn string
+     */
+    public function getUrl(): string{
+        return $this->webhook_url;
     }
 }
