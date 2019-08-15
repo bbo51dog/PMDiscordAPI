@@ -24,6 +24,6 @@ class Content extends Structure{
     protected const TYPE = "content";
     
     public function get(){
-        return $this->content;
+        return $this->data;
     }
 }
