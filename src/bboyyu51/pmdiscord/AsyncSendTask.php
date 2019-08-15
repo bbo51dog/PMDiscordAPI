@@ -18,14 +18,14 @@
 namespace bboyyu51\pmdiscord;
 
 use pocketmine\scheduler\AsyncTask;
+use bboyyu51\pmdiscord\connect\Webhook;
 
 class AsyncSendTask extends AsyncTask{
-    public function __construct(string $message, Sender $sender){
-        $this->message = $message;
-        $this->sender = $sender;
+    public function __construct(Webhook $webhook){
+        $this->webhook = $webhook;
     }
     
     public function onRun(){
-        $this->sender->Send($this->message);
+        Sender::Send($this->webhook);
     }
 }
