@@ -25,17 +25,27 @@ class Webhook{
     /** @var array */
     private $data;
 
+    /** @var string */
+    private $webhook_url;
+
     public function __construct(string $webhook_url){
         $file = file_get_contents($webhook_url);
         $json = json_decode($webhook_url, true);
         $this->data["username"] = $json["name"];
-        $this->data["webhook_url"] = $webhook_url;
+        $this->webhook_url = $webhook_url;
     }
 
     /**
-     * @param ContentBase $content
+     * @param Structure $structure
      */
-    public function addContent(Structure $structure): void{
+    public function addStructure(Structure $structure): void{
+        $this->data[$structure->type()] = $structure->get();
+    }
 
+    /**
+     * @return array
+     */
+    public function getData(): array{
+        rerurn $this->data;
     }
 }
