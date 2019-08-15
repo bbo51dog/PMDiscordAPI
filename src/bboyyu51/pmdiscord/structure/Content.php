@@ -18,10 +18,10 @@
 
 namespace bboyyu51\pmdiscord\structure;
 
-class Text extends Structure{
+class Content extends Structure{
 
     /** @var string */
-    protected const TYPE = "text";
+    protected const TYPE = "content";
     
     public function get(): array{
         return [
