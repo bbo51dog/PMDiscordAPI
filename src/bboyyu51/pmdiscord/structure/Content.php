@@ -23,6 +23,15 @@ class Content extends Structure{
     /** @var string */
     protected const TYPE = "content";
     
+    /**
+     * Set content text
+     *
+     * @param string $text
+     */
+    public function setText(string $text): void{
+        $this->data = $text;
+    }
+    
     public function get(){
         return $this->data;
     }
