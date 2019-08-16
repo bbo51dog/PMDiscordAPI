@@ -22,10 +22,6 @@ class Embed extends Structure{
 
     /** @var string */
     protected const TYPE = "embeds";
-    
-    public function get(){
-        return $this->data;
-    }
 
     public function type(): string{
         return self::TYPE;
