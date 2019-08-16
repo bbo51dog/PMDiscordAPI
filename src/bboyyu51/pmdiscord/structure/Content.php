@@ -31,10 +31,6 @@ class Content extends Structure{
     public function setText(string $text): void{
         $this->data = $text;
     }
-    
-    public function get(){
-        return $this->data;
-    }
 
     public function type(): string{
         return self::TYPE;
