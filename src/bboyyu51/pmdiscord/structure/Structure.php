@@ -25,9 +25,11 @@ abstract class Structure{
     
     /** @var mixed */
     protected $data;
-
+    
     /** @return mixed */
-    abstract public function get();
+    public function get(){
+        return $this->data;
+    }
     
     abstract public function type(): string;
 }
