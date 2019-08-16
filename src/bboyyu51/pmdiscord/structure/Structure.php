@@ -29,7 +29,5 @@ abstract class Structure{
     /** @return mixed */
     abstract public function get();
     
-    public function type(): string{
-        return self::TYPE;
-    }
+    abstract public function type(): string;
 }

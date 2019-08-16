@@ -35,4 +35,8 @@ class Content extends Structure{
     public function get(){
         return $this->data;
     }
+
+    public function type(): string{
+        return self::TYPE;
+    }
 }
