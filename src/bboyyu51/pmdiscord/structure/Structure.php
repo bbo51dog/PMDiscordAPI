@@ -6,7 +6,8 @@
  *| '_ \| '_ \ / _ \| | | | | | | | | |___ \| |
  *| |_) | |_) | (_) | |_| | |_| | |_| |___) | |
  *|_.__/|_.__/ \___/ \__, |\__, |\__,_|____/|_|
- *                   |___/ |___/
+ *                   |___/ |___/     
+ *           
  * Send Message to Discord API
  * 
  * @license https://opensource.org/licenses/mit-license.html MIT License
@@ -15,17 +16,18 @@
  * @copyright 2019 bboyyu51
  */
 
-namespace bboyyu51\pmdiscord;
+namespace bboyyu51\pmdiscord\structure;
 
-use pocketmine\scheduler\AsyncTask;
-use bboyyu51\pmdiscord\connect\Webhook;
-
-class AsyncSendTask extends AsyncTask{
-    public function __construct(Webhook $webhook){
-        $this->webhook = $webhook;
-    }
+abstract class Structure{
     
-    public function onRun(){
-        Sender::send($this->webhook);
-    }
+    /** @var string */
+    protected const TYPE = "base";
+    
+    /** @var mixed */
+    protected $data;
+
+    /** @return mixed */
+    abstract public function get();
+    
+    abstract public function type(): string;
 }

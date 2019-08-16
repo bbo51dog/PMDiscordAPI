@@ -1,37 +1,43 @@
 # PM-DiscordAPI
 このリポジトリは、PMMPからDiscordへwebhookを利用してメッセージを送信するAPIプラグインです。
-こんなもの使わなくても簡単に作れますが、面倒な方は是非お使いください。
 
 ## 使い方
 まず、pluginsディレクトリにプラグインを入れます
 
 メッセージを送信したいクラスに
 ```php
-use bboyyu51\pm-discord\Sender;
+use bboyyu51\pmdiscord\Sender;
+use bboyyu51\pmdiscord\structure\Content;
 ```
 のuse文を追加します。
 
-Senderクラスのインスタンスを作成します。(例として$senderを使用します)
+Webhookクラスのインスタンスを作成します。(例として$webhookを使用します)
 ```php
-$sender = new Sender("https://discordapp.com/api/webhooks/xxxxx/xxxxx");
+$webhook = Sender::create("https://discordapp.com/api/webhooks/000000/xxxxxx");
 ```
 URLはご自身がDiscordで取得したwebhook用のURLに置き換えてください。
 
-最後にメッセージの送信です
+Content(テキスト)を追加します
 ```php
-$sender->Send("message");
+$content = new Content();
+$content->setText("Message");
+$webhook->add($content);
 ```
-messageを送りたいメッセージに置き換えます
+
+最後に送信です
+```php
+Sender::send($webhook);
+```
 
 AsyncTask(非同期Task)で送信したい場合は以下のようにします
 ```php
-$sender->AsyncSend("message");
+Sender::sendAsync($webhook);
 ```
 
 ## 注意等
-* これはプラグインを作るためのライブラリであり、プラグインではありません。
-* これを使用して何らかの損害やトラブル等が発生しても、bboyyu51は一切の責任を負いません。
+* このプラグインは開発を助けるAPIプラグインであり、導入するだけでは何も機能しません
+* このプラグインはMITlicenseによって配布されています
 
-## 連絡
+## 連絡先
 [GitHub](https://github.com/bboyyu51)
 [Twitter](https://twitter.com/bbo_potato)
