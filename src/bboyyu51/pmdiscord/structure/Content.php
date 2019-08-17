@@ -24,6 +24,10 @@ class Content extends Structure{
     protected const TYPE = "content";
 
     private $data = "";
+
+    public function type(): string{
+        return self::TYPE;
+    }
     
     /**
      * Set content text
@@ -32,9 +36,5 @@ class Content extends Structure{
      */
     public function setText(string $text): void{
         $this->data = $text;
-    }
-
-    public function type(): string{
-        return self::TYPE;
     }
 }
