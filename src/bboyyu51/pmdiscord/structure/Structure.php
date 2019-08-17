@@ -24,7 +24,7 @@ abstract class Structure{
     protected const TYPE = "base";
     
     /** @var mixed */
-    protected $data;
+    abstract private $data;
     
     /** @return mixed */
     public function get(){
