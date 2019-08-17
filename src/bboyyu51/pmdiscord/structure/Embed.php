@@ -28,4 +28,13 @@ class Embed extends Structure{
     public function type(): string{
         return self::TYPE;
     }
+    
+    /**
+     * Set embed title
+     *
+     * @param string $title
+     */
+    public function setTitle(string $title): void{
+        $this->data["title"] = $title;
+    }
 }
