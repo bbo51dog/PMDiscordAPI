@@ -22,6 +22,8 @@ class Content extends Structure{
 
     /** @var string */
     protected const TYPE = "content";
+
+    private $data = "";
     
     /**
      * Set content text
