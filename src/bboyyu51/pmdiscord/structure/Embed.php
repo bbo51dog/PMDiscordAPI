@@ -92,4 +92,13 @@ class Embed extends Structure{
     public function setThumbnail(string $url): void{
         $this->data["thumbnail"]["url"] = $url;
     }
+
+    /**
+     * Set text in the footer
+     *
+     * @param string $text
+     */
+    public function setFotterText(string $text): void{
+        $this->data["footer"]["text"] = $text;
+    }
 }
