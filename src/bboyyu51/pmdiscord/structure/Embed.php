@@ -46,4 +46,13 @@ class Embed extends Structure{
     public function setDesc(string $desc): void{
         $this->data["description"] = $desc;
     }
+    
+    /**
+     * Set title url
+     *
+     * @param string $url
+     */
+    public function setUrl(string $url): void{
+        $this->data["url"] = $url;
+    }
 }
