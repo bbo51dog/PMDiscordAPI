@@ -83,4 +83,13 @@ class Embed extends Structure{
     public function setImage(string $url): void{
         $this->data["image"]["url"] = $url;
     }
+
+    /**
+     * Set thumbnail url
+     *
+     * @param string $url
+     */
+    public function setThumbnail(string $url): void{
+        $this->data["thumbnail"]["url"] = $url;
+    }
 }
