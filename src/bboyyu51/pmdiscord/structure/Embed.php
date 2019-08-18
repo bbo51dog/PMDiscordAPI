@@ -55,4 +55,13 @@ class Embed extends Structure{
     public function setUrl(string $url): void{
         $this->data["url"] = $url;
     }
+    
+    /**
+     * Set time stamp
+     *
+     * @param string $time
+     */
+    public function setTime(string $time): vooid{
+        $this->data["timestamp"] = $time;
+    }
 }
