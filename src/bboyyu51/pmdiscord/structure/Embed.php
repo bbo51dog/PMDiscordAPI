@@ -64,4 +64,14 @@ class Embed extends Structure{
     public function setTime(string $time): vooid{
         $this->data["timestamp"] = $time;
     }
+
+    /**
+     * Set embed color
+     * $color is a color code which is decimal
+     *
+     * @param int $color 
+     */
+    public function setColor(int $color): void{
+        $this->data["color"] = $color;
+    }
 }
