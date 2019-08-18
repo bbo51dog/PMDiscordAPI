@@ -74,4 +74,13 @@ class Embed extends Structure{
     public function setColor(int $color): void{
         $this->data["color"] = $color;
     }
+
+    /**
+     * Set image url
+     *
+     * @param string $url
+     */
+    public function setImage(string $url): void{
+        $this->data["image"]["url"] = $url;
+    }
 }
