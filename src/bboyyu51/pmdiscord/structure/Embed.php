@@ -20,15 +20,17 @@ declare(strict_types = 1);
 
 namespace bboyyu51\pmdiscord\structure;
 
-class Embed extends Structure{
-
-    /** @var string */
-    protected const TYPE = "embeds";
+class Embed{
     
-    protected $data = [];
+    private $data = [];
     
-    public function type(): string{
-        return self::TYPE;
+    /**
+     * Get data
+     *
+     * @return array
+     */
+    public function getData(): array{
+        return $this->data;
     }
     
     /**
