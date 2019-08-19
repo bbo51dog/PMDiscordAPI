@@ -25,7 +25,7 @@ class Content extends Structure{
     /** @var string */
     protected const TYPE = "content";
 
-    private $data = "";
+    protected $data = "";
 
     public function type(): string{
         return self::TYPE;
