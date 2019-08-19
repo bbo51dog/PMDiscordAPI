@@ -31,9 +31,6 @@ class Webhook{
     private $webhook_url;
 
     public function __construct(string $webhook_url){
-        $file = file_get_contents($webhook_url);
-        $json = json_decode($file, true);
-        $this->data["username"] = $json["name"];
         $this->webhook_url = $webhook_url;
     }
 
