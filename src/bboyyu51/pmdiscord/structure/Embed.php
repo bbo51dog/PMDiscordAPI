@@ -110,4 +110,13 @@ class Embed extends Structure{
     public function setFooterIcon(string $url): void{
         $this->data["footer"]["icon_url"] = $url;
     }
+
+    /**
+     * Set embed authors name
+     *
+     * @param string $name
+     */
+    public function setAuthorName(string $name): void{
+        $this->data["author"]["name"] = $name;
+    } 
 }
