@@ -31,14 +31,12 @@ class Sender{
      * @param Webhook $webhook
      */
     public static function send(Webhook $webhook): void{
-        $options = [
-            'http' => [
-                'method' => 'POST',
-                'header' => 'Content-Type: application/json',
-                'content' => json_encode($webhook->getData()),
-            ],
-        ];
-        file_get_contents($webhook->getUrl(), false, stream_context_create($options));
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $webhook->getUrl());
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($webhook->getData()));
+        curl_exec($ch);
+        curl_close($ch);
     }
     
     /**
