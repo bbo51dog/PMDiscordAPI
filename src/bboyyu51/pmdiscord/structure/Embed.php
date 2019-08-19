@@ -118,5 +118,14 @@ class Embed extends Structure{
      */
     public function setAuthorName(string $name): void{
         $this->data["author"]["name"] = $name;
-    } 
+    }
+
+    /**
+     * Set embed authors url
+     * 
+     * @param string $url
+     */
+    public function setAuthorUrl(string $url): void{
+        $this->data["author"]["url"] = $url;
+    }
 }
