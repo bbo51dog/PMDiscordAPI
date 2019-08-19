@@ -73,4 +73,13 @@ class Webhook{
     public function setCustomAvatar(string $url): void{
         $this->data["avatar_url"] = $url;
     }
+    
+    /**
+     * Enable|Disable tts message
+     *
+     * @param bool $tts
+     */
+    public function setTts(bool $tts = true): void{
+        $this->data["tts"] = $tts;
+    }
 }
