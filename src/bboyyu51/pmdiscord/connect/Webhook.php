@@ -55,4 +55,22 @@ class Webhook{
     public function getUrl(): string{
         return $this->webhook_url;
     }
+    
+    /**
+     * Change custom senders name
+     * 
+     * @param string $name
+     */
+    public function setCustomName(string $name): void{
+        $this->data["username"] = $name
+    }
+    
+    /**
+     * Set custom senders avatar url
+     *
+     * @param string $url
+     */
+    public function setCustomAvatar(string $url): void{
+        $this->data["avatar_url"] = $url;
+    }
 }
