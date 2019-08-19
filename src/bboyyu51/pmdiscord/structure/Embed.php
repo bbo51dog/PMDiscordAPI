@@ -137,4 +137,20 @@ class Embed extends Structure{
     public function setAuthorIcon(string $url): void{
         $this->data["author"]["icon_url"] = $url;
     }
+
+    /**
+     * Add field
+     * 
+     * @param string $name
+     * @param string $value
+     * @param bool $inline
+     */
+    public function addField(string $name, string $value, bool $inline = false): void{
+        $field["name"] = $name;
+        $field["value"] = $value;
+        if($inline){
+            $field["inline"] = true;
+        }
+        $this->data["field"][] = $field;
+    }
 }
