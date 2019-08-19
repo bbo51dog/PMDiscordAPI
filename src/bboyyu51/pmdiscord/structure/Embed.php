@@ -151,6 +151,6 @@ class Embed extends Structure{
         if($inline){
             $field["inline"] = true;
         }
-        $this->data["field"][] = $field;
+        $this->data["fields"][] = $field;
     }
 }
