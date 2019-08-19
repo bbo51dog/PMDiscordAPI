@@ -16,7 +16,7 @@
  * @copyright 2019 bboyyu51
  */
 
-declare(strict_type = 1);
+declare(strict_types = 1);
 
 namespace bboyyu51\pmdiscord;
 
