@@ -16,12 +16,20 @@
  * @copyright 2019 bboyyu51
  */
 
+declare(strict_types = 1);
+
 namespace bboyyu51\pmdiscord\structure;
 
 class Content extends Structure{
 
     /** @var string */
     protected const TYPE = "content";
+
+    protected $data = "";
+
+    public function type(): string{
+        return self::TYPE;
+    }
     
     /**
      * Set content text
@@ -30,13 +38,5 @@ class Content extends Structure{
      */
     public function setText(string $text): void{
         $this->data = $text;
-    }
-    
-    public function get(){
-        return $this->data;
-    }
-
-    public function type(): string{
-        return self::TYPE;
     }
 }

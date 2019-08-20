@@ -16,6 +16,8 @@
  * @copyright 2019 bboyyu51
  */
 
+declare(strict_types = 1);
+
 namespace bboyyu51\pmdiscord\connect;
 
 use bboyyu51\pmdiscord\structure\Structure;
@@ -29,9 +31,6 @@ class Webhook{
     private $webhook_url;
 
     public function __construct(string $webhook_url){
-        $file = file_get_contents($webhook_url);
-        $json = json_decode($file, true);
-        $this->data["username"] = $json["name"];
         $this->webhook_url = $webhook_url;
     }
 
@@ -55,5 +54,32 @@ class Webhook{
      */
     public function getUrl(): string{
         return $this->webhook_url;
+    }
+    
+    /**
+     * Change custom senders name
+     * 
+     * @param string $name
+     */
+    public function setCustomName(string $name): void{
+        $this->data["username"] = $name;
+    }
+    
+    /**
+     * Set custom senders avatar url
+     *
+     * @param string $url
+     */
+    public function setCustomAvatar(string $url): void{
+        $this->data["avatar_url"] = $url;
+    }
+    
+    /**
+     * Enable|Disable tts message
+     *
+     * @param bool $tts
+     */
+    public function setTts(bool $tts = true): void{
+        $this->data["tts"] = $tts;
     }
 }

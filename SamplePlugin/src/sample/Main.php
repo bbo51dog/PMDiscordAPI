@@ -20,18 +20,29 @@ namespace sample;
 use pocketmine\plugin\PluginBase;
 use bboyyu51\pmdiscord\Sender;
 use bboyyu51\pmdiscord\structure\Content;
+use bboyyu51\pmdiscord\structure\Embed;
+use bboyyu51\pmdiscord\structure\Embeds;
 
 class Main extends PluginBase{
     public function onEnable(){
-        $webhook = Sender::create("https://discordapp.com/api/webhooks/000000/xxxxxx");
+        $webhook = Sender::create("https://discordapp.com/api/webhooks/00000/xxxxx");
         $content = new Content();
         $content->setText("Server Opened");
         $webhook->add($content);
+        $embed = new Embed();
+        $embed->setTitle("title");
+        $embed->setDesc("description");
+        $embed->addField("name","value");
+        $embed->setAuthorName("auhor");
+        $embeds = new Embeds();
+        $embeds->add($embed);
+        $webhook->add($embeds);
+        $webhook->setCustomName("other name");
         Sender::sendAsync($webhook);
     }
     
     public function onDisable(){
-        $webhook = Sender::create("https://discordapp.com/api/webhooks/000000/xxxxxx");
+        $webhook = Sender::create("https://discordapp.com/api/webhooks/00000/xxxxx");
         $content = new Content();
         $content->setText("Server Closed");
         $webhook->add($content);

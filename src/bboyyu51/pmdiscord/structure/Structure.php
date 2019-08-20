@@ -16,6 +16,8 @@
  * @copyright 2019 bboyyu51
  */
 
+declare(strict_types = 1);
+
 namespace bboyyu51\pmdiscord\structure;
 
 abstract class Structure{
@@ -25,9 +27,11 @@ abstract class Structure{
     
     /** @var mixed */
     protected $data;
-
+    
     /** @return mixed */
-    abstract public function get();
+    public function get(){
+        return $this->data;
+    }
     
     abstract public function type(): string;
 }
