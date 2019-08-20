@@ -62,7 +62,7 @@ class Webhook{
      * @param string $name
      */
     public function setCustomName(string $name): void{
-        $this->data["username"] = $name
+        $this->data["username"] = $name;
     }
     
     /**
