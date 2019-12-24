@@ -34,10 +34,12 @@ AsyncTask(非同期Task)で送信したい場合は以下のようにします
 Sender::sendAsync($webhook);
 ```
 
+Embedの送信方法はSamplePluginを参照してください
+
 ## 注意等
 * このプラグインは開発を助けるAPIプラグインであり、導入するだけでは何も機能しません
 * このプラグインはMITlicenseによって配布されています
 
 ## 連絡先
-[GitHub](https://github.com/bboyyu51)
-[Twitter](https://twitter.com/bbo_potato)
+[GitHub](https://github.com/bbo51dog)
+[Twitter](https://twitter.com/bbo51dog)
