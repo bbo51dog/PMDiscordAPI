@@ -35,6 +35,9 @@ class Sender{
         curl_setopt($ch, CURLOPT_URL, $webhook->getUrl());
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($webhook->getData()));
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            "Content-Type: application/json",
+        ]);
         curl_exec($ch);
         curl_close($ch);
     }
