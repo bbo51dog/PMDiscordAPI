@@ -5,7 +5,6 @@ declare(strict_types = 1);
 namespace bbo51dog\pmdiscord;
 
 use bbo51dog\pmdiscord\connection\Webhook;
-use pocketmine\utils\MainLogger;
 
 class Sender{
     
