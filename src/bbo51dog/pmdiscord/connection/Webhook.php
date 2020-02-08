@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace bbo51dog\pmdiscord\connect;
+namespace bbo51dog\pmdiscord\connection;
 
 use bbo51dog\pmdiscord\element\Element;
 
