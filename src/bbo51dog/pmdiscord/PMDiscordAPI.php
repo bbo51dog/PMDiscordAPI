@@ -6,6 +6,6 @@ namespace bbo51dog\pmdiscord;
 
 use pocketmine\plugin\PluginBase;
 
-class Main extends PluginBase{
+class PMDiscordAPI extends PluginBase{
 
 }
