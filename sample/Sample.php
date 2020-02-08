@@ -1,27 +1,12 @@
 <?php
 
-/**
- * _     _                             ____  _ 
- *| |__ | |__   ___  _   _ _   _ _   _| ___|/ |
- *| '_ \| '_ \ / _ \| | | | | | | | | |___ \| |
- *| |_) | |_) | (_) | |_| | |_| | |_| |___) | |
- *|_.__/|_.__/ \___/ \__, |\__, |\__,_|____/|_|
- *                   |___/ |___/
- * PM-DiscordAPI Sample Plugin
- * 
- * @license https://opensource.org/licenses/mit-license.html MIT License
- * @see https://github.com/bbo51dog/PM-DiscordAPI
- * @author bbo51dog <bbo51@icloud.com>
- * @copyright 2019 bbo51dog
- */
-
 namespace sample;
 
 use pocketmine\plugin\PluginBase;
-use bboyyu51\pmdiscord\Sender;
-use bboyyu51\pmdiscord\structure\Content;
-use bboyyu51\pmdiscord\structure\Embed;
-use bboyyu51\pmdiscord\structure\Embeds;
+use bbo51dog\pmdiscord\Sender;
+use bbo51dog\pmdiscord\element\Content;
+use bbo51dog\pmdiscord\element\Embed;
+use bbo51dog\pmdiscord\element\Embeds;
 
 class Main extends PluginBase{
     public function onEnable(){
@@ -32,13 +17,13 @@ class Main extends PluginBase{
         $embed = new Embed();
         $embed->setTitle("title");
         $embed->setDesc("description");
-        $embed->addField("name","value");
-        $embed->setAuthorName("auhor");
+        $embed->addField("name", "value");
+        $embed->setAuthorName("author");
         $embeds = new Embeds();
         $embeds->add($embed);
         $webhook->add($embeds);
         $webhook->setCustomName("other name");
-        Sender::sendAsync($webhook);
+        Sender::send($webhook);
     }
     
     public function onDisable(){
