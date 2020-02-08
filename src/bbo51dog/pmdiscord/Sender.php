@@ -13,6 +13,7 @@ class Sender{
      * Send Message to Discord
      *
      * @param Webhook $webhook
+     * @throws PMDiscordAPIException
      */
     public static function send(Webhook $webhook): void{
         $ch = curl_init();
