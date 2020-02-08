@@ -27,15 +27,6 @@ class Sender{
     }
     
     /**
-     * Send Message by AsyncTask
-     *
-     * @param Webhook $webhook
-     */
-    public static function sendAsync(Webhook $webhook): void{
-        Server::getInstance()->getAsyncPool()->submitTask(new AsyncSendTask($webhook));
-    }
-    
-    /**
      * Create Webhook instance
      * 
      * @param string $webhook_url
