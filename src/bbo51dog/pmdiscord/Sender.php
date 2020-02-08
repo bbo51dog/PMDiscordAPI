@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace bbo51dog\pmdiscord;
 
 use bbo51dog\pmdiscord\connection\Webhook;
+use pocketmine\utils\MainLogger;
 
 class Sender{
     
@@ -18,11 +19,18 @@ class Sender{
         curl_setopt($ch, CURLOPT_URL, $webhook->getUrl());
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($webhook->getData()));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             "Content-Type: application/json",
         ]);
-        curl_exec($ch);
+        $result = curl_exec($ch);
         curl_close($ch);
+        if($result === false){
+            throw new PMDiscordAPIException('cURL connection failed');
+        }elseif(!empty($result)){
+            $result_array = json_decode($result, true);
+            throw new PMDiscordAPIException("{$result_array['code']} : {$result_array['message']}");
+        }
     }
     
     /**
