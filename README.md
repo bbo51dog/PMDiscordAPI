@@ -6,8 +6,8 @@
 
 メッセージを送信したいクラスに
 ```php
-use bboyyu51\pmdiscord\Sender;
-use bboyyu51\pmdiscord\element\Content;
+use bbo51dog\pmdiscord\Sender;
+use bbo51dog\pmdiscord\element\Content;
 ```
 のuse文を追加します。
 
