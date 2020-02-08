@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace bbo51dog\pmdiscord\structure;
+namespace bbo51dog\pmdiscord\element;
 
 class Embed{
     

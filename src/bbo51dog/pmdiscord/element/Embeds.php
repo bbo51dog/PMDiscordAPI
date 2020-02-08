@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace bbo51dog\pmdiscord\structure;
+namespace bbo51dog\pmdiscord\element;
 
-class Embeds extends Structure{
+class Embeds extends element{
     /** @var string */
     protected const TYPE = "embeds";
     

@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace bbo51dog\pmdiscord\connect;
 
-use bbo51dog\pmdiscord\structure\Structure;
+use bbo51dog\pmdiscord\element\Element;
 
 class Webhook{
 
@@ -20,10 +20,10 @@ class Webhook{
 
     /**
      * Add structure
-     * @param Structure $structure
+     * @param Element $element
      */
-    public function add(Structure $structure): void{
-        $this->data[$structure->type()] = $structure->get();
+    public function add(Element $element): void{
+        $this->data[$element->type()] = $element->get();
     }
 
     /**

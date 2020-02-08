@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace bbo51dog\pmdiscord\structure;
+namespace bbo51dog\pmdiscord\element;
 
-abstract class Structure{
+abstract class Element{
     
     /** @var string */
     protected const TYPE = "base";
