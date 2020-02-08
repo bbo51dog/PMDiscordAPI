@@ -1,13 +1,13 @@
-# PM-DiscordAPI
-このリポジトリは、PMMPからDiscordへwebhookを利用してメッセージを送信するAPIプラグインです。
+# PMDiscordAPI
+このプラグインは、PMMPからDiscordへwebhookを利用してメッセージを送信するAPIプラグインです。
 
 ## 使い方
-まず、pluginsディレクトリにプラグインを入れます
+まず、プラグインを導入します。
 
 メッセージを送信したいクラスに
 ```php
 use bboyyu51\pmdiscord\Sender;
-use bboyyu51\pmdiscord\structure\Content;
+use bboyyu51\pmdiscord\element\Content;
 ```
 のuse文を追加します。
 
@@ -29,12 +29,7 @@ $webhook->add($content);
 Sender::send($webhook);
 ```
 
-AsyncTask(非同期Task)で送信したい場合は以下のようにします
-```php
-Sender::sendAsync($webhook);
-```
-
-Embedの送信方法はSamplePluginを参照してください
+Contentの他にも、\bbo51dog\pmdiscord\element内にあるクラスを追加、送信することができます。
 
 ## 注意等
 * このプラグインは開発を助けるAPIプラグインであり、導入するだけでは何も機能しません
