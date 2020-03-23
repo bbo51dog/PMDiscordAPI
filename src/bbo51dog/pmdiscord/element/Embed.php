@@ -49,7 +49,7 @@ class Embed{
      *
      * @param string $time
      */
-    public function setTime(string $time): vooid{
+    public function setTime(string $time): void{
         $this->data["timestamp"] = $time;
     }
 
