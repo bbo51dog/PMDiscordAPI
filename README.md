@@ -1,4 +1,5 @@
 # PMDiscordAPI
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/bbo51dog/PMLineAPI/blob/master/LICENSE)
 This plugin is API to send messages to Discord by Webhook.
 
 ## How to use
