@@ -1,40 +1,26 @@
 # PMDiscordAPI
-このプラグインは、PMMPからDiscordへwebhookを利用してメッセージを送信するAPIプラグインです。
+This plugin is API to send messages to Discord by Webhook.
 
-## 使い方
-まず、プラグインを導入します。
+## How to use
 
-メッセージを送信したいクラスに
+First, please import the following classes
 ```php
 use bbo51dog\pmdiscord\Sender;
 use bbo51dog\pmdiscord\element\Content;
 ```
-のuse文を追加します。
 
-Webhookクラスのインスタンスを作成します。(例として$webhookを使用します)
+e.g.
+add Content(text message)
 ```php
 $webhook = Sender::create("https://discordapp.com/api/webhooks/000000/xxxxxx");
-```
-URLはご自身がDiscordで取得したwebhook用のURLに置き換えてください。
-
-Content(テキスト)を追加します
-```php
 $content = new Content();
-$content->setText("Message");
+$content->setText("Your message here");
 $webhook->add($content);
-```
-
-最後に送信です
-```php
 Sender::send($webhook);
 ```
 
-Contentの他にも、\bbo51dog\pmdiscord\element内にあるクラスを追加、送信することができます。
+In addition, you can use the classes under ``\bbo51dog\pmdiscord\element``.
 
-## 注意等
-* このプラグインは開発を助けるAPIプラグインであり、導入するだけでは何も機能しません
-* このプラグインはMITlicenseによって配布されています
-
-## 連絡先
+## Contact
 [GitHub](https://github.com/bbo51dog)
 [Twitter](https://twitter.com/bbo51dog)
