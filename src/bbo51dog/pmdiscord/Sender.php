@@ -5,6 +5,8 @@ declare(strict_types = 1);
 namespace bbo51dog\pmdiscord;
 
 use bbo51dog\pmdiscord\connection\Webhook;
+use bbo51dog\pmdiscord\task\SendAsyncTask;
+use pocketmine\Server;
 
 class Sender{
     
@@ -12,9 +14,14 @@ class Sender{
      * Send Message to Discord
      *
      * @param Webhook $webhook
+     * @param bool $async
      * @throws PMDiscordAPIException
      */
-    public static function send(Webhook $webhook): void{
+    public static function send(Webhook $webhook, bool $async = true): void{
+        if($async){
+            Server::getInstance()->getAsyncPool()->submitTask(new SendAsyncTask());
+            return;
+        }
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $webhook->getUrl());
         curl_setopt($ch, CURLOPT_POST, true);
