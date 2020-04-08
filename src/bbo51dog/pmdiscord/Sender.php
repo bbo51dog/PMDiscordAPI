@@ -36,7 +36,11 @@ class Sender{
             throw new PMDiscordAPIException('cURL connection failed');
         }elseif(!empty($result)){
             $result_array = json_decode($result, true);
-            throw new PMDiscordAPIException("{$result_array['code']} : {$result_array['message']}");
+            if(in_array($result_array, 'code') && in_array($result_array, 'message')){
+                throw new PMDiscordAPIException("{$result_array['code']} : {$result_array['message']}");
+            }else{
+                throw new PMDiscordAPIException('Sending webhook failed');
+            }
         }
     }
     
