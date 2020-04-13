@@ -19,7 +19,7 @@ class Sender{
      */
     public static function send(Webhook $webhook, bool $async = true): void{
         if($async){
-            Server::getInstance()->getAsyncPool()->submitTask(new SendAsyncTask());
+            Server::getInstance()->getAsyncPool()->submitTask(new SendAsyncTask($webhook));
             return;
         }
         $ch = curl_init();
