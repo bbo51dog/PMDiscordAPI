@@ -30,6 +30,7 @@ class Sender{
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             "Content-Type: application/json",
         ]);
+        curl_setopt($curl,CURLOPT_SSL_VERIFYPEER, false);
         $result = curl_exec($ch);
         curl_close($ch);
         if($result === false){
