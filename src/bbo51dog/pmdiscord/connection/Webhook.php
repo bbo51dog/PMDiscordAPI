@@ -19,7 +19,8 @@ class Webhook{
     }
 
     /**
-     * Add structure
+     * Add element
+     * 
      * @param Element $element
      */
     public function add(Element $element): void{
