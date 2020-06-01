@@ -2,7 +2,6 @@
 build-by-default: true
 branches:
 - master
-- virion
 projects:
   PMDiscordAPI:
     path: ""
