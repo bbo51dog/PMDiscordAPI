@@ -1,0 +1,6 @@
+name: PMDiscordAPI
+api: [3.0.0]
+antigen: bbo51dog\pmdiscord
+author: bbo51dog
+description: Send Message to Discord API
+version: 3.1.3
