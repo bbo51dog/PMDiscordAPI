@@ -1,8 +1,4 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/bbo51dog/PMLineAPI/blob/master/LICENSE)
-[![](https://poggit.pmmp.io/shield.state/PMDiscordAPI)](https://poggit.pmmp.io/p/PMDiscordAPI)
-[![](https://poggit.pmmp.io/shield.api/PMDiscordAPI)](https://poggit.pmmp.io/p/PMDiscordAPI)
-[![](https://poggit.pmmp.io/shield.dl/PMDiscordAPI)](https://poggit.pmmp.io/p/PMDiscordAPI)
-[![](https://poggit.pmmp.io/shield.dl.total/PMDiscordAPI)](https://poggit.pmmp.io/p/PMDiscordAPI)
 
 ## Overview
 This plugin is API to send messages to Discord by Webhook.
