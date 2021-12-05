@@ -9,7 +9,7 @@ use bbo51dog\pmdiscord\element\Embed;
 use bbo51dog\pmdiscord\element\Embeds;
 
 class Main extends PluginBase{
-    public function onEnable(){
+    public function onEnable(): void {
         $content = new Content();
         $content->setText("Server Opened");
         $embed = (new Embed())
@@ -26,7 +26,7 @@ class Main extends PluginBase{
         Sender::send($webhook);
     }
     
-    public function onDisable(){
+    public function onDisable(): void {
         $content = new Content();
         $content->setText("Server Closed");
         $webhook = Sender::create("https://discordapp.com/api/webhooks/00000/xxxxx")->add($content);

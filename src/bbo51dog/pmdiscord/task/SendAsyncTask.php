@@ -15,7 +15,7 @@ class SendAsyncTask extends AsyncTask{
         $this->webhook = $webhook;
     }
 
-    public function onRun(){
+    public function onRun(): void {
         Sender::send($this->webhook, false);
     }
 }

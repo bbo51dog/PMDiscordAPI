@@ -1,5 +1,5 @@
 name: PMDiscordAPI
-api: [3.0.0]
+api: [4.0.0]
 main: bbo51dog\pmdiscord\PMDiscordAPI
 author: bbo51dog
 description: Send Message to Discord API
