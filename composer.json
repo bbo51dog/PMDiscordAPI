@@ -1,7 +1,6 @@
 {
     "name": "bbo51dog/pmdiscordapi",
     "description": "API to send messages to Discord by Webhook",
-    "minimum-stability": "dev",
     "license": "MIT",
     "require": {
         "pocketmine/pocketmine-mp": "4.*",
