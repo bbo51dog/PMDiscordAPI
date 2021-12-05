@@ -7,6 +7,9 @@ use bbo51dog\pmdiscord\connection\Webhook;
 use bbo51dog\pmdiscord\task\SendAsyncTask;
 use pocketmine\Server;
 
+/**
+ * @deprecated
+ */
 class Sender {
 
     /**
