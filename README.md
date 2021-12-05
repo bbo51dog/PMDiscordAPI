@@ -7,18 +7,18 @@ This plugin is API to send messages to Discord by Webhook.
 
 First, please import the following classes
 ```php
-use bbo51dog\pmdiscord\Sender;
+use bbo51dog\pmdiscord\connection\Webhook;
 use bbo51dog\pmdiscord\element\Content;
 ```
 
 e.g.
 add Content(text message)
 ```php
-$webhook = Sender::create("https://discordapp.com/api/webhooks/000000/xxxxxx");
+$webhook = Webhook::create("https://discordapp.com/api/webhooks/000000/xxxxxx");
 $content = new Content();
 $content->setText("Your message here");
 $webhook->add($content);
-Sender::send($webhook);
+$webhook->send();
 ```
 
 In addition, you can use the classes under ``\bbo51dog\pmdiscord\element``.
