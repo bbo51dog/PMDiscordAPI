@@ -4,6 +4,7 @@
     "minimum-stability": "dev",
     "license": "MIT",
     "require": {
-        "pocketmine/pocketmine-mp": "4.*"
+        "pocketmine/pocketmine-mp": "4.*",
+        "ext-curl": "*"
     }
 }
