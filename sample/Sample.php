@@ -8,7 +8,8 @@ use bbo51dog\pmdiscord\element\Content;
 use bbo51dog\pmdiscord\element\Embed;
 use bbo51dog\pmdiscord\element\Embeds;
 
-class Main extends PluginBase{
+class Main extends PluginBase {
+
     public function onEnable(): void {
         $content = new Content();
         $content->setText("Server Opened");
@@ -25,7 +26,7 @@ class Main extends PluginBase{
             ->setCustomName("other name");
         Sender::send($webhook);
     }
-    
+
     public function onDisable(): void {
         $content = new Content();
         $content->setText("Server Closed");

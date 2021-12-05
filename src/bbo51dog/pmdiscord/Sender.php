@@ -1,15 +1,14 @@
 <?php
 
-declare(strict_types = 1);
-
+declare(strict_types=1);
 namespace bbo51dog\pmdiscord;
 
 use bbo51dog\pmdiscord\connection\Webhook;
 use bbo51dog\pmdiscord\task\SendAsyncTask;
 use pocketmine\Server;
 
-class Sender{
-    
+class Sender {
+
     /**
      * Send Message to Discord
      *
@@ -17,8 +16,8 @@ class Sender{
      * @param bool $async
      * @throws PMDiscordAPIException
      */
-    public static function send(Webhook $webhook, bool $async = true): void{
-        if($async){
+    public static function send(Webhook $webhook, bool $async = true): void {
+        if ($async) {
             Server::getInstance()->getAsyncPool()->submitTask(new SendAsyncTask($webhook));
             return;
         }
@@ -33,25 +32,25 @@ class Sender{
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         $result = curl_exec($ch);
         curl_close($ch);
-        if($result === false){
+        if ($result === false) {
             throw new PMDiscordAPIException('cURL connection failed');
-        }elseif(!empty($result)){
+        } elseif (!empty($result)) {
             $result_array = json_decode($result, true);
-            if(in_array('code', $result_array) && in_array('message', $result_array)){
+            if (in_array('code', $result_array) && in_array('message', $result_array)) {
                 throw new PMDiscordAPIException("{$result_array['code']} : {$result_array['message']}");
-            }else{
+            } else {
                 throw new PMDiscordAPIException('Sending webhook failed');
             }
         }
     }
-    
+
     /**
      * Create Webhook instance
-     * 
+     *
      * @param string $webhook_url
      * @return Webhook
      */
-    public static function create(string $webhook_url): Webhook{
+    public static function create(string $webhook_url): Webhook {
         return new Webhook($webhook_url);
     }
 }
