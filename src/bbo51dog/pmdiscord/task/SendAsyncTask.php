@@ -8,8 +8,7 @@ use pocketmine\scheduler\AsyncTask;
 
 class SendAsyncTask extends AsyncTask {
 
-    /** @var Webhook */
-    private $webhook;
+    private Webhook $webhook;
 
     public function __construct(Webhook $webhook) {
         $this->webhook = $webhook;

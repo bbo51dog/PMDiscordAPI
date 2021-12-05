@@ -3,18 +3,17 @@
 declare(strict_types=1);
 namespace bbo51dog\pmdiscord\element;
 
-abstract class Element {
+abstract class Element implements ElementType {
 
-    /** @var string */
-    protected const TYPE = "base";
+    protected mixed $data;
 
-    /** @var mixed */
-    protected $data;
+    protected string $type;
 
-    /** @return mixed */
-    public function get() {
+    public function getData(): mixed {
         return $this->data;
     }
 
-    abstract public function type(): string;
+    public function getType(): string {
+        return $this->type;
+    }
 }

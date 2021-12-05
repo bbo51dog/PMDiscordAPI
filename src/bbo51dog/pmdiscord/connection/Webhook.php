@@ -7,11 +7,9 @@ use bbo51dog\pmdiscord\element\Element;
 
 class Webhook {
 
-    /** @var array */
-    private $data;
+    private array $data;
 
-    /** @var string */
-    private $webhook_url;
+    private string $webhook_url;
 
     public function __construct(string $webhook_url) {
         $this->webhook_url = $webhook_url;
@@ -24,7 +22,7 @@ class Webhook {
      * @return self
      */
     public function add(Element $element): self {
-        $this->data[$element->type()] = $element->get();
+        $this->data[$element->getType()] = $element->getData();
         return $this;
     }
 

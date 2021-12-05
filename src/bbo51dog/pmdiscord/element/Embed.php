@@ -5,7 +5,7 @@ namespace bbo51dog\pmdiscord\element;
 
 class Embed {
 
-    private $data = [];
+    private array $data = [];
 
     /**
      * Get data
@@ -100,7 +100,7 @@ class Embed {
      * @param string $text
      * @return self
      */
-    public function setFotterText(string $text): self {
+    public function setFooterText(string $text): self {
         $this->data["footer"]["text"] = $text;
         return $this;
     }

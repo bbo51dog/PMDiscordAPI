@@ -5,14 +5,10 @@ namespace bbo51dog\pmdiscord\element;
 
 class Embeds extends Element {
 
-    /** @var string */
-    protected const TYPE = "embeds";
+    /** @var array */
+    protected mixed $data = [];
 
-    protected $data = [];
-
-    public function type(): string {
-        return self::TYPE;
-    }
+    protected string $type = self::TYPE_EMBEDS;
 
     /**
      * Add embed
